@@ -54,6 +54,7 @@ class ReactHls extends React.Component {
     render () {
         let { playerId } = this.state;
         const { controls, width, height, poster, videoProps } = this.props;
+        console.log('hls-log', controls, videoProps)
         if (controls)
         return (
             <div key={playerId} className="player-area">
