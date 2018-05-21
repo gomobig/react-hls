@@ -54,13 +54,25 @@ class ReactHls extends React.Component {
     render () {
         let { playerId } = this.state;
         const { controls, width, height, poster, videoProps } = this.props;
-
+        if (controls)
         return (
             <div key={playerId} className="player-area">
                 <video ref="video"
                        className="hls-player"
                        id={`react-hls-${playerId}`}
                        controls={controls}
+                       width={width}
+                       height={height}
+                       poster={poster}
+                       {...videoProps}></video>
+            </div>
+        )
+        else
+        return (
+            <div key={playerId} className="player-area">
+                <video ref="video"
+                       className="hls-player"
+                       id={`react-hls-${playerId}`}
                        width={width}
                        height={height}
                        poster={poster}
